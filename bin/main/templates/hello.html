@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+    <head>
+        <title>Olá Spring com segurança!</title>
+    </head>
+    <body>
+        <h1 th:inline="text">Olá [[${#httpServletRequest.remoteUser}]]!</h1>
+        <br>
+        <h3> Muito bem, você acaba de usar uma aplicação web usando o spring security.</h3>
+        <br>
+        <form th:action="@{/logout}" method="post">
+            <p>Clique aqui para Deslogar</p>
+            <input type="submit" value="deslogar"/>
+        </form>
+    </body>
+</html>
